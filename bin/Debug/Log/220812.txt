@@ -1,0 +1,104 @@
+[2022-08-12 16:32:45] : 상태표시줄 이미지 리소스가 없습니다.
+[2022-08-12 16:32:46] : 상태표시줄 이미지 리소스가 없습니다.
+[2022-08-12 16:32:59] : 레이저 컨트롤러 Ethernet 연결 중 오류가 발생했습니다.
+[2022-08-12 16:34:01] : 상태표시줄 이미지 리소스가 없습니다.
+[2022-08-12 16:34:02] : 상태표시줄 이미지 리소스가 없습니다.
+[2022-08-12 16:34:10] : 레이저 컨트롤러 Ethernet 연결 중 오류가 발생했습니다.
+[2022-08-12 16:34:19] : 레이저 컨트롤러 Ethernet 연결 중 오류가 발생했습니다.
+[2022-08-12 16:34:52] : 상태표시줄 이미지 리소스가 없습니다.
+[2022-08-12 16:34:53] : 상태표시줄 이미지 리소스가 없습니다.
+[2022-08-12 16:36:34] : 상태표시줄 이미지 리소스가 없습니다.
+[2022-08-12 16:36:41] : 상태표시줄 이미지 리소스가 없습니다.
+[2022-08-12 16:39:09] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 16:39:16] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 16:39:20] : 입력 문자열의 형식이 잘못되었습니다.
+[2022-08-12 16:39:22] : 입력 문자열의 형식이 잘못되었습니다.
+[2022-08-12 16:41:12] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 16:41:14] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 16:41:19] : 입력 문자열의 형식이 잘못되었습니다.
+[2022-08-12 16:43:35] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 16:43:38] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 16:44:30] : DLL 'LJX8_IF.dll'을(를) 로드할 수 없습니다. 지정된 모듈을 찾을 수 없습니다. (예외가 발생한 HRESULT: 0x8007007E)
+[2022-08-12 16:46:07] : 개체 참조가 개체의 인스턴스로 설정되지 않았습니다.
+[2022-08-12 16:46:14] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 16:46:15] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:02:43] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:02:44] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:03:45] : 레이저 초기화
+[2022-08-12 17:08:31] : 레이저 초기화
+[2022-08-12 17:08:31] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:08:34] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:08:52] : 레이저 컨트롤러 Ethernet 연결에 성공했습니다.
+ IP : 169.254.149.123
+[2022-08-12 17:08:52] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:08:55] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:09:21] : 레이저 컨트롤러 Ethernet 연결에 성공했습니다.
+ IP : 169.254.149.123
+[2022-08-12 17:09:21] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:09:22] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:09:53] : 레이저 컨트롤러 Ethernet 연결에 실패했습니다.
+
+[2022-08-12 17:09:53] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:09:56] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:10:07] : 레이저 초기화
+[2022-08-12 17:10:08] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:10:09] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:10:13] : 입력 문자열의 형식이 잘못되었습니다.
+[2022-08-12 17:10:38] : 레이저 컨트롤러 Ethernet 연결에 실패했습니다.
+
+[2022-08-12 17:10:38] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:10:39] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:11:40] : 레이저 컨트롤러 Ethernet 연결에 실패했습니다.
+
+[2022-08-12 17:14:06] : 레이저 초기화
+[2022-08-12 17:14:06] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:14:08] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:14:13] : 입력 문자열의 형식이 잘못되었습니다.
+[2022-08-12 17:14:33] : 레이저 컨트롤러 Ethernet 연결에 실패했습니다.
+
+[2022-08-12 17:14:33] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:14:34] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:14:51] : 레이저 컨트롤러 Ethernet 연결에 성공했습니다.
+ IP : 169.254.149.123
+[2022-08-12 17:14:51] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:14:53] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:34:23] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:34:23] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:34:23] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:34:34] : 'C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserFlatnessMeasurementSystem\LaserBendingMeasurementSystem\bin\Debug\Resources\ControllerStateOFF.png' 경로의 일부를 찾을 수 없습니다.
+[2022-08-12 17:37:13] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:37:13] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:37:13] : 잘못된 URI: URI 형식을 확인할 수 없습니다.
+[2022-08-12 17:37:15] : 잘못된 URI: URI 형식을 확인할 수 없습니다.
+[2022-08-12 17:39:28] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:39:28] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:39:28] : 'resources/controllerstateoff.png' 리소스가 없습니다.
+[2022-08-12 17:39:36] : 'resources/controllerstateoff.png' 리소스가 없습니다.
+[2022-08-12 17:39:45] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:39:45] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:47:30] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:47:30] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:48:55] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:48:55] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:49:02] : 레이저 컨트롤러 IP연결 호출
+[2022-08-12 17:49:02] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:49:02] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:49:02] : 입력 문자열의 형식이 잘못되었습니다.
+[2022-08-12 17:49:03] : 레이저 컨트롤러 IP연결 완료
+[2022-08-12 17:49:08] : 레이저 컨트롤러 IP연결 호출
+[2022-08-12 17:49:08] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:49:08] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:49:08] : 값이 너무 크거나 작아 부호 없는 바이트 형식에 맞지 않습니다.
+[2022-08-12 17:49:11] : 레이저 컨트롤러 IP연결 완료
+[2022-08-12 17:49:18] : 레이저 컨트롤러 IP연결 호출
+[2022-08-12 17:49:18] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:49:18] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:49:30] : 레이저 컨트롤러 Ethernet 연결에 실패했습니다.
+
+[2022-08-12 17:49:30] : 레이저 컨트롤러 IP연결 완료
+[2022-08-12 17:49:45] : 레이저 컨트롤러 IP연결 호출
+[2022-08-12 17:49:45] : 레이저 컨트롤러 초기화 호출
+[2022-08-12 17:49:45] : 레이저 컨트롤러 초기화 완료
+[2022-08-12 17:49:47] : 레이저 컨트롤러 Ethernet 연결에 성공했습니다.
+ IP : 169.254.149.123
+[2022-08-12 17:49:47] : 레이저 컨트롤러 IP연결 완료

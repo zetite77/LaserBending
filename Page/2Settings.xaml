@@ -1,0 +1,742 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" 
+             x:Class="LaserBendingMeasurementSystem.Page.MenuSettings"
+             mc:Ignorable="d" 
+             d:DesignHeight="595" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#FF7F7F7F" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+            <Setter Property="Width" Value="170" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Border x:Name="tabBtnBorder"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter
+                                ContentSource="Header"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center" 
+                                Margin="10"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter
+                                    TargetName="tabBtnBorder"
+                                    Property="Background"
+                                    Value="#FF264457" />
+                                <Setter
+                                    TargetName="tabBtnBorder"
+                                    Property="Control.Foreground"
+                                    Value="#FFFFFFFF" />
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter
+                                    TargetName="tabBtnBorder"
+                                    Property="Background"
+                                    Value="#FF264457" />
+                                <Setter
+                                    TargetName="tabBtnBorder"
+                                    Property="Control.Foreground"
+                                    Value="#FFFFFFFF" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Title" TargetType="{x:Type TextBlock}">
+            <Setter Property="Control.Foreground" Value="#FFC000" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
+        <Style x:Key="Title_T" TargetType="{x:Type TextBox}">
+            <Setter Property="Control.Foreground" Value="#FFC000" />
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
+        <Style x:Key="Index" TargetType="{x:Type TextBlock}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Control.Foreground" Value="#8DD6C1" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+            <Setter Property="FlowDirection" Value="RightToLeft" />
+        </Style>
+        <Style x:Key="Index2" TargetType="{x:Type TextBlock}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Control.Foreground" Value="#8DD6C1" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+            <Setter Property="FlowDirection" Value="LeftToRight" />
+        </Style>
+        <Style x:Key="TextBlockContents" TargetType="{x:Type TextBlock}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Height" Value="33.4" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Control.Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
+        <Style x:Key="ComboBoxContents" TargetType="{x:Type ComboBox}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="33.4" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Background" Value="#FF192E3A"/>
+            <Setter Property="BorderThickness" Value="0"/>
+
+        </Style>
+
+        <Style x:Key="TextBoxContents" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="BorderBrush" Value="#8DD6C1"/>
+            <Setter Property="Height" Value="33.4" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
+        <Style x:Key="TextBoxContents2" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="33.4" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Control.Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
+        <Style x:Key="ButtonContents" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Height" Value="33.4" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
+        <Style x:Key="CheckBoxContents" TargetType="{x:Type CheckBox}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Height" Value="33.4" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
+        <Style x:Key="RadioButtonContents" TargetType="{x:Type RadioButton}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="33.4" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+
+        </Style>
+        <ControlTemplate x:Key="ComboBoxTemplate1" TargetType="{x:Type ComboBox}">
+            <Grid x:Name="templateRoot" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Width="0"/>
+                </Grid.ColumnDefinitions>
+                <Popup x:Name="PART_Popup" AllowsTransparency="True" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom">
+                    <Themes:SystemDropShadowChrome x:Name="shadow" Color="Transparent" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{Binding ActualWidth, ElementName=templateRoot}">
+                        <Border x:Name="DropDownBorder" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderThickness="1" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
+                            <ScrollViewer x:Name="DropDownScrollViewer">
+                                <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
+                                    <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
+                                        <Rectangle x:Name="OpaqueRect" Fill="{Binding Background, ElementName=DropDownBorder}" Height="{Binding ActualHeight, ElementName=DropDownBorder}" Width="{Binding ActualWidth, ElementName=DropDownBorder}"/>
+                                    </Canvas>
+                                    <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Grid>
+                            </ScrollViewer>
+                        </Border>
+                    </Themes:SystemDropShadowChrome>
+                </Popup>
+                <ToggleButton x:Name="toggleButton" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" >
+                    <ToggleButton.Style>
+                        <Style TargetType="{x:Type ToggleButton}">
+                            <Setter Property="OverridesDefaultStyle" Value="True"/>
+                            <Setter Property="IsTabStop" Value="False"/>
+                            <Setter Property="Focusable" Value="False"/>
+                            <Setter Property="ClickMode" Value="Press"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                        <Border x:Name="templateRoot" BorderBrush="#8DD6C1" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" Background="#01000000">
+                                            <Border x:Name="splitBorder" BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Right" Margin="0" SnapsToDevicePixels="True" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+                                                <Path x:Name="Arrow" Data="F1M0,0L2.667,2.66665 5.3334,0 5.3334,-1.78168 2.6667,0.88501 0,-1.78168 0,0z" Fill="#8DD6C1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="templateRoot" Value="#8DD6C1"/>
+                                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#8DD6C1"/>
+                                                <Setter Property="Background" TargetName="splitBorder" Value="#8DD6C1"/>
+                                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="Transparent"/>
+                                            </MultiDataTrigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Fill" TargetName="Arrow" Value="Black"/>
+                                            </Trigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="false"/>
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="templateRoot">
+                                                    <Setter.Value>
+                                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                            <GradientStop Color="#FF264457" Offset="0"/>
+                                                            <GradientStop Color="#FF264457" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF7EB4EA"/>
+                                            </MultiDataTrigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="templateRoot" Value="#8DD6C1"/>
+                                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF7EB4EA"/>
+                                                <Setter Property="Background" TargetName="splitBorder">
+                                                    <Setter.Value>
+                                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                            <GradientStop Color="#FFEBF4FC" Offset="0"/>
+                                                            <GradientStop Color="#FFDCECFC" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="#FF7EB4EA"/>
+                                            </MultiDataTrigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter Property="Background" Value="#8DD6C1"/>
+                                                <Setter Property="Fill" TargetName="Arrow" Value="Black"/>
+                                            </Trigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="false"/>
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="templateRoot">
+                                                    <Setter.Value>
+                                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                            <GradientStop Color="#8DD6C1" Offset="0"/>
+                                                            <GradientStop Color="#8DD6C1" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF569DE5"/>
+                                            </MultiDataTrigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="templateRoot" Value="#8DD6C1"/>
+                                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF569DE5"/>
+                                                <Setter Property="Background" TargetName="splitBorder">
+                                                    <Setter.Value>
+                                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                            <GradientStop Color="#8DD6C1" Offset="0"/>
+                                                            <GradientStop Color="#8DD6C1" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="#FF569DE5"/>
+                                            </MultiDataTrigger>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Fill" TargetName="Arrow" Value="#FFBFBFBF"/>
+                                            </Trigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="false"/>
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="templateRoot" Value="#8DD6C1"/>
+                                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FFD9D9D9"/>
+                                            </MultiDataTrigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="templateRoot" Value="#8DD6C1"/>
+                                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FFBFBFBF"/>
+                                                <Setter Property="Background" TargetName="splitBorder" Value="#8DD6C1"/>
+                                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="Transparent"/>
+                                            </MultiDataTrigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ToggleButton.Style>
+                </ToggleButton>
+                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="False" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="True">
+                    <Setter Property="Margin" TargetName="shadow" Value="0,0,5,5"/>
+                    <Setter Property="Color" TargetName="shadow" Value="#71000000"/>
+                </Trigger>
+                <Trigger Property="HasItems" Value="False">
+                    <Setter Property="Height" TargetName="DropDownBorder" Value="95"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsGrouping" Value="True"/>
+                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="False"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+                </MultiTrigger>
+                <Trigger Property="CanContentScroll" SourceName="DropDownScrollViewer" Value="False">
+                    <Setter Property="Canvas.Top" TargetName="OpaqueRect" Value="{Binding VerticalOffset, ElementName=DropDownScrollViewer}"/>
+                    <Setter Property="Canvas.Left" TargetName="OpaqueRect" Value="{Binding HorizontalOffset, ElementName=DropDownScrollViewer}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        
+        <ControlTemplate x:Key="ComboBoxItemTemplate1" TargetType="{x:Type ComboBoxItem}">
+            <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="False"/>
+                        <Condition Property="IsMouseOver" Value="True"/>
+                        <Condition Property="IsKeyboardFocused" Value="False"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" TargetName="Bd" Value="#8DD6C1"/>
+                    <Setter Property="BorderBrush" TargetName="Bd" Value="#A826A0DA"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="True"/>
+                        <Condition Property="IsMouseOver" Value="False"/>
+                        <Condition Property="IsKeyboardFocused" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" TargetName="Bd" Value="#8DD6C1"/>
+                    <Setter Property="BorderBrush" TargetName="Bd" Value="#FF26A0DA"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="True"/>
+                        <Condition Property="IsMouseOver" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" TargetName="Bd" Value="#8DD6C1"/>
+                    <Setter Property="BorderBrush" TargetName="Bd" Value="#99006CD9"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="True"/>
+                        <Condition Property="IsMouseOver" Value="False"/>
+                        <Condition Property="IsKeyboardFocused" Value="False"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" TargetName="Bd" Value="#8DD6C1"/>
+                    <Setter Property="BorderBrush" TargetName="Bd" Value="#FFDADADA"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="False"/>
+                        <Condition Property="IsMouseOver" Value="False"/>
+                        <Condition Property="IsKeyboardFocused" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="BorderBrush" TargetName="Bd" Value="#8DD6C1"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="False"/>
+                        <Condition Property="IsMouseOver" Value="True"/>
+                        <Condition Property="IsKeyboardFocused" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" TargetName="Bd" Value="#8DD6C1"/>
+                    <Setter Property="BorderBrush" TargetName="Bd" Value="#FF26A0DA"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </MultiTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <Grid Background="#FF192E3A">
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Width="1030" Height="80" Panel.ZIndex="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.45,0" SpreadMethod="Pad" MappingMode="RelativeToBoundingBox">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF192E3A" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <ComboBox Margin="180,0,0,0" x:Name="ComboBox1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="816" Height="30" SelectionChanged="ComboBox1_SelectionChanged">
+                <ComboBoxItem Content="Coffie"/>
+                <ComboBoxItem Content="Tea"/>
+                <ComboBoxItem Content="Orange Juice"/>
+                <ComboBoxItem Content="Milk"/>
+                <ComboBoxItem Content="Iced Tea"/>
+                <ComboBoxItem Content="Mango Shake"/>
+                <ComboBoxItem Content="test"/>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="30,0,0,0" Text="레시피 리스트" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="24" FontFamily="LG Smart UI Regular" Foreground="White"/>
+        </Grid>
+
+        <TabControl TabStripPlacement="Left">
+            <TabItem IsEnabled="False" BorderBrush="{x:Null}" Visibility="Visible" Width="140" Padding="0,0,0,0" ScrollViewer.CanContentScroll="True" Height="140">
+                <TabItem.Background>
+                    <ImageBrush ImageSource="/Resource/ImgSettings.png" Stretch="UniformToFill"/>
+                </TabItem.Background>
+            </TabItem>
+            <TabItem IsEnabled="False" BorderBrush="{x:Null}" Visibility="Visible" Background="{x:Null}" Header="설 정    " FontSize="36" Foreground="White" HorizontalAlignment="Center"/>
+
+            <TabItem Header="레시피" IsSelected="True" Height="50">
+                <Grid Background="#FF264457" Margin="-3,-3,-3,-3">
+                    <ScrollViewer  Width="800" Height="450" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30,30,0,30" MaxWidth="800" Grid.Column="2" Grid.Row="20" ScrollViewer.CanContentScroll="True">
+                        <ScrollViewer.Background>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0.5,0">
+                                <GradientStop Color="#33000000"/>
+                                <GradientStop Color="#333E8853" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ScrollViewer.Background>
+
+                        <DockPanel LastChildFill="False">
+                            <StackPanel Width="790" Margin="0,0,0,0">
+                                <DockPanel LastChildFill="False">
+                                    <StackPanel Width="280" Margin="30,10,0,10">
+                                        <!--레시피 스펙 설정-->
+                                        <TextBox x:Name="Recipe_Name" Style="{StaticResource Title_T}" Text="기기명1" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="크기 가로" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="크기 세로" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="두께" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="편차가능 편차" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="설정할 편차 범위" TextWrapping="Wrap"/>
+                                    </StackPanel>
+
+                                    <StackPanel Width="450" Margin="0,10,10,10" DockPanel.Dock="Left">
+                                        <TextBlock Style="{StaticResource Title}" Text="" TextWrapping="Wrap"/>
+                                        <TextBox x:Name="Recipe_Width" Text="" Style="{StaticResource TextBoxContents}" TextChanged="Recipe_Width_TextChanged"/>
+                                        <TextBox x:Name="Recipe_Height" Text="" Style="{StaticResource TextBoxContents}" TextChanged="Recipe_Height_TextChanged"/>
+                                        <TextBox x:Name="Recipe_Weight" Style="{StaticResource TextBoxContents}"/>
+                                        <TextBlock Text="200μm = 0.2mm = 0.02cm" Style="{StaticResource Index2}"/>
+                                        <TextBox x:Name="Recipe_Range" Style="{StaticResource TextBoxContents}"/>
+                                    </StackPanel>
+
+                                </DockPanel>
+                                <DockPanel LastChildFill="False">
+                                    <StackPanel Width="150" Margin="30,10,0,10">
+                                        <!--레시피 수동/자동 설정-->
+                                        <TextBlock Style="{StaticResource Index}" Text="기준점 입력 선택" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="기준점1" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="기준점2" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="기준점3" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점 입력 선택" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점1" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점2" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점3" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점4" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점5" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점6" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점7" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점8" TextWrapping="Wrap"/>
+                                        <TextBlock Style="{StaticResource Index}" Text="측정점9" TextWrapping="Wrap"/>
+                                    </StackPanel>
+
+                                    <StackPanel Width="300" Margin="0,10,10,10" DockPanel.Dock="Left">
+
+                                        <StackPanel  Orientation="Horizontal">
+                                            <RadioButton GroupName="auto_manu" x:Name="manu" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left" Checked="manu_Checked">수동</RadioButton>
+                                            <RadioButton GroupName="auto_manu" x:Name="auto" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left" IsChecked="True" Checked="auto_Checked">자동</RadioButton>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Mark_Point_1_x" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_1_x_TextChanged" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Mark_Point_1_y" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_1_y_TextChanged" IsEnabled="False" />
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Mark_Point_2_x" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_2_x_TextChanged" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Mark_Point_2_y" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_2_y_TextChanged" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Mark_Point_3_x" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_3_x_TextChanged" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Mark_Point_3_y" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_3_y_TextChanged" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <RadioButton GroupName="auto_manu2" x:Name="manu2" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left">수동</RadioButton>
+                                            <RadioButton GroupName="auto_manu2" x:Name="auto2" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left" IsChecked="True">자동</RadioButton>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Point_1_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Point_1_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Point_2_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Point_2_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Point_3_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Point_3_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Point_4_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Point_4_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Point_5_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Point_5_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Point_6_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Point_6_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Point_7_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Point_7_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Point_8_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Point_8_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <Label Content="X : "/>
+                                            <TextBox x:Name="Point_9_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <Label Content=" Y : "/>
+                                            <TextBox x:Name="Point_9_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <Grid Width="290" >
+                                        <Grid.Background>
+                                            <ImageBrush Stretch="Fill"  ImageSource="/LaserBendingMeasurementSystem;component/Resource/baground_xy.png" AlignmentY="Top" AlignmentX="Left"/>
+                                        </Grid.Background>
+                                        <!-- 그림 -->
+                                        <Canvas x:Name="Point_Canvas" Width="180" Height="80" Margin="5,30,0,0" MouseLeftButtonDown="Point_Canvas_MouseLeftButtonDown">
+                                            <Canvas.Background>
+                                                <ImageBrush ImageSource="/LaserBendingMeasurementSystem;component/Resource/phone.png"/>
+                                            </Canvas.Background>
+                                            <Canvas.LayoutTransform>
+                                                <ScaleTransform ScaleX="1" ScaleY="1" CenterX=".5" CenterY=".5"/>
+                                            </Canvas.LayoutTransform>
+                                        </Canvas>
+                                    </Grid>
+
+                                </DockPanel>
+
+                            </StackPanel>
+                        </DockPanel>
+
+
+                    </ScrollViewer>
+                    <Button x:Name="LecipeSettingsBtn_Reset" Content="초기화" HorizontalAlignment="Left" Margin="856,374,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="LecipeSettingsBtn_Reset_Click"/>
+                    <Button x:Name="LecipeSettingsBtn_Delete" Content="삭제" HorizontalAlignment="Left" Margin="856,444,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="LecipeSettingsBtn_Delete_Click"/>
+                    <Button x:Name="LecipeSettingsBtn_Save" Content="저장" HorizontalAlignment="Left" Margin="856,515,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="LecipeSettingsBtn_Save_Click" />
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="모션" Height="50">
+                <Grid>
+                    <TextBlock Grid.Row="1" Margin="-3,-3,-3,-3" Text="모션 내용 입니다." Padding="8,8,8,8" Background="#FF264457" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="레이저" Height="50">
+                <Grid Background="#FF264457" Margin="-3,-3,-3,-3">
+                    <ScrollViewer  Width="800" Height="450" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30,30,0,30" MaxWidth="800" Grid.Column="2" Grid.Row="20" ScrollViewer.CanContentScroll="True">
+                        <ScrollViewer.Background>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0.5,0">
+                                <GradientStop Color="#33000000"/>
+                                <GradientStop Color="#333E8853" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ScrollViewer.Background>
+
+                        <DockPanel LastChildFill="False">
+                            <StackPanel Width="280" Margin="30,10,0,10">
+                                <!--통신 설정-->
+                                <TextBlock Style="{StaticResource Title}" Text="통신 설정" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="IP" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="PORT" TextWrapping="Wrap"/>
+                                <!--트리거 설정-->
+                                <TextBlock Style="{StaticResource Title}" Text="트리거 설정" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="샘플링 주기" TextWrapping="Wrap"/>
+                                <!--촬상 광량 설정-->
+                                <TextBlock Style="{StaticResource Title}" Text="광량 설정" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="다이나믹 레인지" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="노광 시간" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="노광 모드" TextWrapping="Wrap"/>
+                                <TextBlock x:Name="LSIndex_MultiCombine" Style="{StaticResource Index}" Text="멀티발광 (합성) 발광 횟수" TextWrapping="Wrap" Visibility="Hidden"/>
+                                <TextBlock x:Name="LSIndex_MultiOptimize" Style="{StaticResource Index}" Text="멀티발광 (광량 최적화) 발광 횟수" TextWrapping="Wrap" Visibility="Hidden"/>
+                                <!--촬상 검출 설정-->
+                                <TextBlock Style="{StaticResource Title}" Text="피크 설정" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="검출 감도" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="무효 데이터 보간 점수" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="복수 피크 처리" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="복수 피크 폭 필터" TextWrapping="Wrap"/>
+                                <TextBlock Style="{StaticResource Index}" Text="복수 피크 미광 억제" TextWrapping="Wrap"/>
+                            </StackPanel>
+
+                            <StackPanel Width="450" Margin="0,10,10,10" DockPanel.Dock="Left">
+                                <!--통신 설정-->
+                                <TextBlock Style="{StaticResource Title}" Text="" TextWrapping="Wrap"/>
+                                <TextBox x:Name="LSTBox_IP" Style="{StaticResource TextBoxContents}"/>
+                                <TextBox x:Name="LSTBox_Port" Style="{StaticResource TextBoxContents}"/>
+                                <!--트리거 설정-->
+                                <TextBlock Style="{StaticResource Title}" Text="" TextWrapping="Wrap"/>
+
+                                <ComboBox x:Name="LSCBox_Sampling" Style="{StaticResource ComboBoxContents}"  Template="{DynamicResource ComboBoxTemplate1}">
+
+                                    <ComboBoxItem Content="10Hz" Template="{DynamicResource ComboBoxItemTemplate1}" />
+                                    <ComboBoxItem Content="20Hz" Template="{DynamicResource ComboBoxItemTemplate1}" />
+                                    <ComboBoxItem Content="50Hz" Template="{DynamicResource ComboBoxItemTemplate1}" />
+                                    <ComboBoxItem Content="100Hz" Template="{DynamicResource ComboBoxItemTemplate1}" />
+                                    <ComboBoxItem Content="200Hz" Template="{DynamicResource ComboBoxItemTemplate1}" />
+                                    <ComboBoxItem Content="500Hz" Template="{DynamicResource ComboBoxItemTemplate1}" />
+                                    <ComboBoxItem Content="1kHz" Template="{DynamicResource ComboBoxItemTemplate1}" />
+                                </ComboBox>
+                                <!--촬상 광량 설정-->
+                                <TextBlock Style="{StaticResource Title}" Text="" TextWrapping="Wrap"/>
+                                <ComboBox x:Name="LSCBox_DynamicRange" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}">
+                                    <ComboBoxItem Content="1" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="2" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="3" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="4" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="5" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="6" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="7" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="8" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="9" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                </ComboBox>
+                                <ComboBox x:Name="LSCBox_ExposureTime" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}">
+                                    <ComboBoxItem Content="15μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="30μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="60μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="120μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="240μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="480μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="960μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="1700μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="4800μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="9600μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="80μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="160μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="210μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="320μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="380μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="640μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                </ComboBox>
+                                <ComboBox x:Name="LSCBox_ExposureMode" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}">
+                                    <ComboBoxItem Content="표준" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="멀티 발광 (합성)" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="멀티 발광 (광량 최적화)" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                </ComboBox>
+                                <ComboBox x:Name="LSCBox_MultiCombine" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}" Visibility="Hidden" SelectedIndex="0">
+                                    <ComboBoxItem Content="3회" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="5회" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                </ComboBox>
+                                <ComboBox x:Name="LSCBox_MultiOptimize" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}" Visibility="Hidden" SelectedIndex="0">
+                                    <ComboBoxItem Content="2회" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="4회" Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                </ComboBox>
+                                <!--촬상 검출 설정-->
+                                <TextBlock Style="{StaticResource Title}" TextWrapping="Wrap"/>
+                                <ComboBox x:Name="LSCBox_DetectionSensitivity" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}">
+                                    <ComboBoxItem Content="1"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="2"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="3"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="4"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="5"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                </ComboBox>
+                                <WrapPanel>
+                                    <TextBox x:Name="LSTBox_InvalidDataProcessing" Style="{StaticResource TextBoxContents}" Width="85" IsReadOnly="True"/>
+                                    <Slider x:Name="LSSlider_InvalidDataProcessing" Width="350" VerticalAlignment="Center" Margin="5,0,5,0" Height="Auto" Maximum="255" Value="64" ValueChanged="LSSlider_InvalidDataProcessing_ValueChanged" SmallChange="1" IsSnapToTickEnabled="True"/>
+                                    
+                                </WrapPanel>
+                                <ComboBox x:Name="LSCBox_DetectionMode" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}">
+                                    <ComboBoxItem Content="표준(최대 피크)" Template="{DynamicResource ComboBoxItemTemplate1}" />
+                                    <ComboBoxItem Content="Near"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="Far"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="무효 데이터로 처리"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                </ComboBox>
+                                <ComboBox x:Name="LSCBox_BlurredLightFilter" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}">
+                                    <ComboBoxItem Content="OFF"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="약"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="중약"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="중"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="중강"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="강"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                </ComboBox>
+                                <ComboBox x:Name="LSCBox_IrregularReflectionRemoval" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}">
+                                    <ComboBoxItem Content="OFF"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="약"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="중"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                    <ComboBoxItem Content="강"  Template="{DynamicResource ComboBoxItemTemplate1}"/>
+                                </ComboBox>
+
+                            </StackPanel>
+                        </DockPanel>
+
+
+                    </ScrollViewer>
+
+                    <Button x:Name="LSBtn_Reset" Content="초기화" HorizontalAlignment="Left" Margin="856,444,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="LSBtn_Reset_Click"/>
+                    <Button x:Name="LSBtn_Save" Content="저장" HorizontalAlignment="Left" Margin="856,515,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="LSBtn_Save_Click"/>
+                    <Button x:Name="LSBtn_Connect" Content="연결" HorizontalAlignment="Left" Margin="856,115,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="LSBtn_Connect_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

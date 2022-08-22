@@ -1,0 +1,49 @@
+﻿<Window x:Class="LaserBendingMeasurementSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaserBendingMeasurementSystem"
+        mc:Ignorable="d" Height="675" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}" ResizeMode="CanMinimize" Closing="WindowClosing">
+    <Grid Width="1200" Height="675" HorizontalAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="False">
+        <Grid Height="40" Background="#FF7F7F7F" VerticalAlignment="Bottom">
+            <StatusBar Background="#FF7F7F7F" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FlowDirection="RightToLeft">
+                <TextBlock x:Name="TxtBlock_mcimg" TextWrapping="Wrap" FontSize="24" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="7,0,7,0" TextAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="True" Height="36" Width="41">
+                    <TextBlock.Background>
+                        <ImageBrush TileMode="Tile" ImageSource="/Resource/ControllerStateERR.png" Stretch="Uniform"/>
+                    </TextBlock.Background></TextBlock>
+                <TextBlock x:Name="TxtBlock_mcip" TextWrapping="Wrap" FontSize="20" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="7,0,7,0" TextAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="True" FontWeight="Normal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="#FFDEDEDE" FontFamily="LG Smart UI Regular" FontStretch="Normal" FontStyle="Normal" TextTrimming="None" LineStackingStrategy="MaxHeight" Height="36">
+                    <TextBlock.Background>
+                        <ImageBrush TileMode="Tile" ImageSource="/Resource/gray chocolate.png"/>
+                    </TextBlock.Background><Run Language="ko-kr" Text="255.255.255.255"/></TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="24" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="7,0,7,0" TextAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="True" Foreground="#FFFFC000" FontFamily="LG Smart UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontStretch="Normal" FontStyle="Normal" TextTrimming="None" LineStackingStrategy="MaxHeight" Height="36">
+                    <TextBlock.Background>
+                        <ImageBrush TileMode="Tile" ImageSource="/Resource/gray chocolate.png"/>
+                    </TextBlock.Background><Run Language="ko-kr" Text="MC"/></TextBlock>
+                <TextBlock x:Name="TxtBlock_lcimg" TextWrapping="Wrap" FontSize="24" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="7,0,7,0" TextAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="True" Height="36" Width="41">
+                    <TextBlock.Background>
+                        <ImageBrush TileMode="Tile" ImageSource="/Resource/ControllerStateRUN.png" Stretch="Uniform"/>
+                    </TextBlock.Background></TextBlock>
+                <TextBlock x:Name="TxtBlock_lcip" TextWrapping="Wrap" FontSize="20" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="7,0,7,0" TextAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="True" FontWeight="Normal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="#FFDEDEDE" FontFamily="LG Smart UI Regular" FontStretch="Normal" FontStyle="Normal" TextTrimming="None" LineStackingStrategy="MaxHeight" Height="36">
+                    <TextBlock.Background>
+                        <ImageBrush TileMode="Tile" ImageSource="/Resource/gray chocolate.png"/>
+                    </TextBlock.Background><Run Language="ko-kr" Text="255.255.255.255"/></TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="24" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="7,0,7,0" TextAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="True" Foreground="#FFFFC000" FontFamily="LG Smart UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontStretch="Normal" FontStyle="Normal" TextTrimming="None" LineStackingStrategy="MaxHeight" Height="36">
+                    <TextBlock.Background>
+                        <ImageBrush TileMode="Tile" ImageSource="/Resource/gray chocolate.png"/>
+                    </TextBlock.Background><Run Language="ko-kr" Text="LC"/></TextBlock>
+            </StatusBar>
+        </Grid>
+        <Grid Height="40" Background="#FF7F7F7F" VerticalAlignment="Top" MouseDown="MenuMouseDown">
+            <Button x:Name="Btn_menuQuit" Content="X" HorizontalAlignment="Right" Margin="1160,0,0,0" VerticalAlignment="Top" Height="40" Width="40" Foreground="White" FontSize="22" FontFamily="Gill Sans MT" Click="Btn_menuQuit_Click" Background="{x:Null}"/>
+            <Button x:Name="Btn_menuMinimize" Content="_" HorizontalAlignment="Left" Margin="1120,0,0,0" Width="40" Foreground="White" Background="#00DDDDDD" FontSize="22" FontFamily="Gill Sans MT" Click="Btn_menuMinimize_Click"/>
+            <Button x:Name="Btn_menuHome" Content="HOME" Margin="10,0,1040,0" VerticalAlignment="Center" Height="40" Foreground="White" Background="#00DDDDDD" FontSize="22" FontFamily="Gill Sans MT" Click="Btn_menuHome_Click"/>
+            <Button x:Name="Btn_menuSettings" Content="설정" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Center" Height="40" Width="150" Foreground="White" Background="#00DDDDDD" FontSize="24" FontFamily="LG Smart UI Regular" Click="Btn_menuSettings_Click"/>
+            <Button x:Name="Btn_menuHistoryInfo" Content="이력ㆍ정보" HorizontalAlignment="Left" Margin="310,0,0,0" VerticalAlignment="Center" Height="40" Width="150" Foreground="White" Background="#00DDDDDD" FontSize="24" FontFamily="LG Smart UI Regular" Click="Btn_menuHistoryInfo_Click"/>
+            <Button x:Name="Btn_menuManual" Content="제어" HorizontalAlignment="Left" Margin="460,0,0,0" VerticalAlignment="Center" Height="40" Width="150" Foreground="White" Background="#00DDDDDD" FontSize="24" FontFamily="LG Smart UI Regular" Click="Btn_menuManual_Click"/>
+        </Grid>
+
+        <Grid x:Name="grdMainView" Width="1200" Height="595" Background="#FF264457" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+    </Grid>
+</Window>

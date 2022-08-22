@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaserBendingMeasurementSystem", "LaserBendingMeasurementSystem.csproj", "{DBCEB3F6-5740-4CDE-B91A-E9623842AC03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBCEB3F6-5740-4CDE-B91A-E9623842AC03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBCEB3F6-5740-4CDE-B91A-E9623842AC03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBCEB3F6-5740-4CDE-B91A-E9623842AC03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBCEB3F6-5740-4CDE-B91A-E9623842AC03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F8723AF-F784-4003-8680-B62F8A8201E5}
+	EndGlobalSection
+EndGlobal
