@@ -144,7 +144,7 @@
 
     <Grid UseLayoutRounding="False" Background="#FF192E3A">
         <TabControl TabStripPlacement="Left">
-            
+
             <TabItem IsEnabled="False" BorderBrush="{x:Null}" Visibility="Visible" Width="Auto" Padding="0,0,0,0" ScrollViewer.CanContentScroll="True" Margin="15,0,15,0" Height="140">
                 <TabItem.Background>
                     <ImageBrush ImageSource="/Resource/ImgHistory.png" Stretch="Uniform"/>
@@ -153,11 +153,8 @@
             <TabItem IsEnabled="False" BorderBrush="{x:Null}" Visibility="Visible" Background="{x:Null}" Header="이력 정보 " FontSize="36" Foreground="White" HorizontalAlignment="Center"/>
 
             <TabItem Header="가동이력" Height="50" IsSelected="True">
-                <TextBlock Text="가동이력 내용 입니다." Background="#FF264457" Margin="-3,-3,-3,-3" Padding="8,8,8,8"/>
-            </TabItem>
-            <TabItem Header="정보" Height="50" >
                 <Grid Background="#FF264457" Margin="-3,-3,-3,-3">
-                    <ScrollViewer  Width="800" Height="450" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30,30,0,30" MaxWidth="800" Grid.Column="2" Grid.Row="20" ScrollViewer.CanContentScroll="False">
+                    <ScrollViewer  Width="250" Height="530" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30,30,0,30" MaxWidth="800" Grid.Column="2" Grid.Row="20" ScrollViewer.CanContentScroll="True">
                         <ScrollViewer.Background>
                             <LinearGradientBrush EndPoint="1,1" StartPoint="0.5,0">
                                 <GradientStop Color="#33000000"/>
@@ -165,22 +162,64 @@
                             </LinearGradientBrush>
                         </ScrollViewer.Background>
                         <DockPanel LastChildFill="False">
-                            <StackPanel Width="280" Margin="30,10,0,10">
-                                <!--정보-->
-                                <TextBlock Style="{StaticResource Title}" Text="회사 명" TextWrapping="Wrap"/>
-                                <TextBlock Style="{StaticResource Index}" Text="설치한 날짜" TextWrapping="Wrap"/>
-                                <TextBlock Style="{StaticResource Index}" Text="최근 유지보수한 날짜" TextWrapping="Wrap"/>
-                                <TextBlock Style="{StaticResource Index}" Text="설치 버전" TextWrapping="Wrap"/>
-                            </StackPanel>
-
-                            <StackPanel Width="450" Margin="0,10,10,10" DockPanel.Dock="Left">
-                                <TextBlock Style="{StaticResource Title2}" Text="NovaSoft" TextWrapping="Wrap"/>
-                                <TextBlock Style="{StaticResource Index2}" Text="2022-08-12 10:00:00" TextWrapping="Wrap"/>
-                                <TextBlock Style="{StaticResource Index2}" Text="2022-08-12 10:00:00" TextWrapping="Wrap"/>
-                                <TextBlock Style="{StaticResource Index2}" Text="V1" TextWrapping="Wrap"/>
+                            <StackPanel Width="220" Margin="0,0,0,0">
+                                <TextBlock Style="{StaticResource Title}" Text="파일위치" TextWrapping="Wrap"/>
                             </StackPanel>
                         </DockPanel>
                     </ScrollViewer>
+                    <ScrollViewer  Width="680" Height="530" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="30,30,30,30" MaxWidth="800" Grid.Column="2" Grid.Row="20" ScrollViewer.CanContentScroll="True">
+                        <ScrollViewer.Background>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0.5,0">
+                                <GradientStop Color="#33000000"/>
+                                <GradientStop Color="#333E8853" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ScrollViewer.Background>
+                        <DockPanel LastChildFill="False">
+                            <StackPanel Width="640" Margin="0,0,0,0">
+                                <ListView Name="his" FontSize="15">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="레시피명" DisplayMemberBinding="{Binding recpy}" Width="160"/>
+                                            <GridViewColumn Header="합불판정" DisplayMemberBinding="{Binding pass}" Width="120"/>
+                                            <GridViewColumn Header="불합격 좌표" DisplayMemberBinding="{Binding xy}" Width="160"/>
+                                            <GridViewColumn Header="날짜시간" DisplayMemberBinding="{Binding date}" Width="160"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </StackPanel>
+                        </DockPanel>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="정보" Height="50" >
+                <Grid Background="#FF264457" Margin="-3,-3,-3,-3">
+
+                    <DockPanel HorizontalAlignment="Left" Height="452" LastChildFill="False" Margin="27,33,0,0" VerticalAlignment="Top" Width="951">
+                        <DockPanel.Background>
+                            <LinearGradientBrush  EndPoint="1,1" StartPoint="0.5,0">
+                                <GradientStop Color="#33000000"/>
+                                <GradientStop Color="#333E8853" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DockPanel.Background>
+                        <StackPanel Width="300" Margin="50,20,0,10">
+                            <!--정보-->
+                            <TextBlock Style="{StaticResource Title}" Text="회사 명" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index}" Text="설치한 날짜" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index}" Text="최근 유지보수한 날짜" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index}" Text="프로그램 설치 버전" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index}" Text="모션 장치 버전" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index}" Text="레이저 장치 버전" TextWrapping="Wrap"/>
+                        </StackPanel>
+
+                        <StackPanel Width="550" Margin="0,20,10,10" DockPanel.Dock="Left">
+                            <TextBlock Style="{StaticResource Title2}" Text="NovaSoft" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index2}" Text="2022-08-12 10:00:00" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index2}" Text="2022-08-12 10:00:00" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index2}" Text="V1" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index2}" Text="?" TextWrapping="Wrap"/>
+                            <TextBlock Style="{StaticResource Index2}" Text="?" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </DockPanel>
                 </Grid>
 
             </TabItem>
