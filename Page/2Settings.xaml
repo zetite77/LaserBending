@@ -539,7 +539,7 @@
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
                                             <RadioButton GroupName="auto_manu2" x:Name="manu2" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left">수동</RadioButton>
-                                            <RadioButton GroupName="auto_manu2" x:Name="auto2" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left" IsChecked="True" Checked="auto2_Checked">자동</RadioButton>
+                                            <RadioButton GroupName="auto_manu2" x:Name="auto2" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left" IsChecked="True">자동</RadioButton>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
                                             <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
@@ -625,7 +625,7 @@
                                 <ImageBrush Stretch="Fill"  ImageSource="/Resource/baground_xy.png" AlignmentY="Top" AlignmentX="Left"/>
                             </Grid.Background>
                             <!-- 그림 -->
-                            <Canvas x:Name="Point_Canvas" Width="140" Height="160"  Margin="20,0,0,30" MouseLeftButtonDown="Point_Canvas_MouseLeftButtonDown" MouseLeftButtonUp="Point_Canvas_MouseLeftButtonUp" MouseMove="Point_Canvas_MouseMove" >
+                            <Canvas x:Name="Point_Canvas" Width="140" Height="160"  Margin="20,0,0,30">
                                 <Canvas.Background>
                                     <ImageBrush ImageSource="/Resource/phone.png"/>
                                 </Canvas.Background>
@@ -728,7 +728,7 @@
                                     <ComboBoxItem Content="380μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
                                     <ComboBoxItem Content="640μs" Template="{DynamicResource ComboBoxItemTemplate1}"/>
                                 </ComboBox>
-                                <ComboBox x:Name="LSCBox_ExposureMode" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}">
+                                <ComboBox x:Name="LSCBox_ExposureMode" Style="{StaticResource ComboBoxContents}" Template="{DynamicResource ComboBoxTemplate1}" SelectionChanged="LSCBox_ExposureMode_SelectionChanged">
                                     <ComboBoxItem Content="표준" Template="{DynamicResource ComboBoxItemTemplate1}"/>
                                     <ComboBoxItem Content="멀티 발광 (합성)" Template="{DynamicResource ComboBoxItemTemplate1}"/>
                                     <ComboBoxItem Content="멀티 발광 (광량 최적화)" Template="{DynamicResource ComboBoxItemTemplate1}"/>

@@ -131,13 +131,6 @@ namespace LaserBendingMeasurementSystem.Page
         private void LSBtn_Connect_Click(object sender, RoutedEventArgs e)
         {
             LaserInitialize();
-            ComboBox1.Items.Clear(); //레시피 콤보박스  전부 없애기
-            DirectoryInfo di = new DirectoryInfo("Setting"); //세팅 폴더
-            foreach (FileInfo item in di.GetFiles()) //세팅 폴더 안의 모든 파일 가져오기
-            {
-                ComboBox1.Items.Add(item.Name.Substring(0, item.Name.Length - 4)); //레시피 콤보박스에 파일 이름들 추가
-
-            }
             ConnectEthernetIP();
         }
         
