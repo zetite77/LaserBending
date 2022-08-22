@@ -131,13 +131,6 @@ namespace LaserBendingMeasurementSystem.Page
         private void LSBtn_Connect_Click(object sender, RoutedEventArgs e)
         {
             LaserInitialize();
-            ComboBox1.Items.Clear(); //레시피 콤보박스  전부 없애기
-            DirectoryInfo di = new DirectoryInfo("Setting"); //세팅 폴더
-            foreach (FileInfo item in di.GetFiles()) //세팅 폴더 안의 모든 파일 가져오기
-            {
-                ComboBox1.Items.Add(item.Name.Substring(0, item.Name.Length - 4)); //레시피 콤보박스에 파일 이름들 추가
-
-            }
             ConnectEthernetIP();
         }
         
@@ -565,39 +558,52 @@ namespace LaserBendingMeasurementSystem.Page
             }
         }
 
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////레시피 설정 부분
         private void LecipeSettingsBtn_Reset_Click(object sender, RoutedEventArgs e) //레시피 설정 초기화 버튼
         {
             //레시피 스펙 설정
             Recipe_Name.Text = "";
-            Recipe_Width.Text = "100";
+            Recipe_Width.Text = "80";
             Recipe_Height.Text = "100";
             Recipe_Weight.Text = "10";
             Recipe_Range.Text = "0.5";
             //기준점 설정
-            auto.IsChecked = true;     manu.IsChecked = false;
-            Mark_Point_1_x.Text = "0";   Mark_Point_1_y.Text = "0";
-            Mark_Point_2_x.Text = "0";   Mark_Point_2_y.Text = "95";
-            Mark_Point_3_x.Text = "95";   Mark_Point_3_y.Text = "47";
+            auto.IsChecked = true; manu.IsChecked = false;
+            Mark_Point_1_x.Text = "0"; Mark_Point_1_y.Text = "0";
+            Mark_Point_2_x.Text = "75"; Mark_Point_2_y.Text = "0";
+            Mark_Point_3_x.Text = "37"; Mark_Point_3_y.Text = "95";
             //측정점 설정
-            auto2.IsChecked = true;    manu2.IsChecked = false;
-            Point_1_x.Text = "";        Point_1_y.Text = "";
-            Point_2_x.Text = "";        Point_2_y.Text = "";
-            Point_3_x.Text = "";        Point_3_y.Text = "";
-            Point_4_x.Text = "";        Point_4_y.Text = "";
-            Point_5_x.Text = "";        Point_5_y.Text = "";
-            Point_6_x.Text = "";        Point_6_y.Text = "";
-            Point_7_x.Text = "";        Point_7_y.Text = "";
-            Point_8_x.Text = "";        Point_8_y.Text = "";
+            auto2.IsChecked = true; manu2.IsChecked = false;
+            Point_1_x.Text = "0"; Point_1_y.Text = "0";
+            Point_2_x.Text = "40"; Point_2_y.Text = "0";
+            Point_3_x.Text = "80"; Point_3_y.Text = "0";
+            Point_4_x.Text = "0"; Point_4_y.Text = "50";
+            Point_5_x.Text = "40"; Point_5_y.Text = "50";
+            Point_6_x.Text = "80"; Point_6_y.Text = "50";
+            Point_7_x.Text = "0"; Point_7_y.Text = "100";
+            Point_8_x.Text = "40"; Point_8_y.Text = "100";
+            Point_9_x.Text = "80"; Point_9_y.Text = "100";
+            Canvas.SetLeft(im4, 0);
+            Canvas.SetTop(im4, 0);
+            Canvas.SetLeft(im5, 0);
+            Canvas.SetTop(im5, 100);
+            Canvas.SetLeft(im6, 0);
+            Canvas.SetTop(im6, 200);
         }
 
         private void LecipeSettingsBtn_Delete_Click(object sender, RoutedEventArgs e) //레시피 설정 삭제 버튼
         {
-            try{
-                if (File.Exists("Setting\\" + Recipe_Name.Text + ".csv")){ //파일 존재 확인
+            try
+            {
+                if (File.Exists("Setting\\" + Recipe_Name.Text + ".csv"))
+                { //파일 존재 확인
                     File.Delete("Setting\\" + Recipe_Name.Text + ".csv"); //파일 삭제
                     MessageBox.Show("파일이 삭제되었습니다.");
-                }else{ 
-                    MessageBox.Show("없는 설정파일 입니다."); 
+                }
+                else
+                {
+                    MessageBox.Show("없는 설정파일 입니다.");
                 }
                 ComboBox1.Items.Clear(); //레시피 콤보박스  전부 없애기
                 DirectoryInfo di = new DirectoryInfo("Setting"); //세팅 폴더
@@ -607,7 +613,8 @@ namespace LaserBendingMeasurementSystem.Page
 
                 }
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 ComboBox1.Items.Clear(); //레시피 콤보박스  전부 없애기
                 DirectoryInfo di = new DirectoryInfo("Setting"); //세팅 폴더
                 foreach (FileInfo item in di.GetFiles()) //세팅 폴더 안의 모든 파일 가져오기
@@ -624,10 +631,14 @@ namespace LaserBendingMeasurementSystem.Page
             try
             {
                 StreamWriter file = new StreamWriter("Setting\\" + Recipe_Name.Text + ".csv", false, Encoding.UTF8); //csv 파일  생성,변경  설정 등록
-                file.WriteLine("#name\tx1\ty1\tz1\tx2\ty2\tz2\tx3\ty3\tz3\tWidth\tHeight\tWeight\tRange"); //key(항목이름)부분 한줄 저장
+                file.WriteLine("#name\tx1\ty1\tz1\tx2\ty2\tz2\tx3\ty3\tz3\tWidth\tHeight\tWeight\tRange\tPoint1_x\tPoint1_y\tPoint2_x\tPoint2_y" +
+                    "\tPoint3_x\tPoint3_y\tPoint4_x\tPoint4_y\tPoint5_x\tPoint5_y\tPoint6_x\tPoint6_y\tPoint7_x\tPoint7_y\tPoint8_x\tPoint8_y\tPoint9_x\tPoint9_y"); //key(항목이름)부분 한줄 저장
                 file.WriteLine(Recipe_Name.Text + "\t" + Mark_Point_1_x.Text + "\t" + Mark_Point_1_y.Text + "\t0\t" +
                     Mark_Point_2_x.Text + "\t" + Mark_Point_2_y.Text + "\t0\t" + Mark_Point_3_x.Text + "\t" + Mark_Point_3_y.Text +
-                    "\t0\t" + Recipe_Width.Text + "\t" + Recipe_Width.Text + "\t" + Recipe_Weight.Text + "\t" + Recipe_Range.Text); //value(값)부분 한줄 저장
+                    "\t0\t" + Recipe_Width.Text + "\t" + Recipe_Height.Text + "\t" + Recipe_Weight.Text + "\t" + Recipe_Range.Text + "\t" + Point_1_x.Text +
+                    "\t" + Point_1_y.Text + "\t" + Point_2_x.Text + "\t" + Point_2_y.Text + "\t" + Point_3_x.Text + "\t" + Point_3_y.Text + "\t" + Point_4_x.Text +
+                    "\t" + Point_4_y.Text + "\t" + Point_5_x.Text + "\t" + Point_5_y.Text + "\t" + Point_6_x.Text + "\t" + Point_6_y.Text + "\t" + Point_7_x.Text +
+                    "\t" + Point_7_y.Text + "\t" + Point_8_x.Text + "\t" + Point_8_y.Text + "\t" + Point_9_x.Text + "\t" + Point_9_y.Text); //value(값)부분 한줄 저장
                 file.Close(); //파일 닫기
                 MessageBox.Show("설정이 저장되었습니다.");
 
@@ -657,35 +668,36 @@ namespace LaserBendingMeasurementSystem.Page
         }
 
 
-        
+
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e) //레시피 콤보박스 선택
         {
-            //ComboBox currentComboBox = sender as ComboBox;
-            //ComboBoxItem currentItem = ComboBox1.SelectedItem as ComboBoxItem;
             //csv 파일 이름 
             string csv_name = "";
-
-            //if (currentItem != null) {
-                //MessageBox.Show(currentItem.Content.ToString());
-                csv_name = ComboBox1.SelectedItem.ToString();//csv파일 이름(기기명)
-           // }
 
             var x = new Dictionary<String, string>();
             string[] keys = null;
             string[] values = null;
             try
             {
-                Console.WriteLine("이름 : "+ csv_name);
+                if (ComboBox1.SelectedItem == null)
+                {
+                    return;
+                }
+                csv_name = ComboBox1.SelectedItem.ToString();//csv파일 이름(기기명)
+                Console.WriteLine("이름 : " + csv_name);
 
                 StreamReader file = new StreamReader("Setting\\" + csv_name + ".csv", Encoding.Default); //csv 파일 열기
                 while (!file.EndOfStream) //없을때 까지 계속
                 {
                     string line = file.ReadLine(); //한줄씩
-                    if (line.Substring(0, 1).Equals("#")) {         // 줄의 첫번째가 #이라면
+                    if (line.Substring(0, 1).Equals("#"))
+                    {         // 줄의 첫번째가 #이라면
                         keys = line.Split('\t'); // ','로 나누어서 리스트에 담기
                         keys[0] = keys[0].Replace("#", ""); //"#"->""로 변환
                         continue;
-                    }else{
+                    }
+                    else
+                    {
                         values = line.Split('\t'); // ','로 나누어서 리스트에 담기
                     }
                 }
@@ -706,45 +718,23 @@ namespace LaserBendingMeasurementSystem.Page
                 Mark_Point_1_x.Text = data["x1"]; Mark_Point_1_y.Text = data["y1"];
                 Mark_Point_2_x.Text = data["x2"]; Mark_Point_2_y.Text = data["y2"];
                 Mark_Point_3_x.Text = data["x3"]; Mark_Point_3_y.Text = data["y3"];
+                Point_1_x.Text = data["Point1_x"]; Point_1_y.Text = data["Point1_y"];
+                Point_2_x.Text = data["Point2_x"]; Point_2_y.Text = data["Point2_y"];
+                Point_3_x.Text = data["Point3_x"]; Point_3_y.Text = data["Point3_y"];
+                Point_4_x.Text = data["Point4_x"]; Point_4_y.Text = data["Point4_y"];
+                Point_5_x.Text = data["Point5_x"]; Point_5_y.Text = data["Point5_y"];
+                Point_6_x.Text = data["Point6_x"]; Point_6_y.Text = data["Point6_y"];
+                Point_7_x.Text = data["Point7_x"]; Point_7_y.Text = data["Point7_y"];
+                Point_8_x.Text = data["Point8_x"]; Point_8_y.Text = data["Point8_y"];
+                Point_9_x.Text = data["Point9_x"]; Point_9_y.Text = data["Point9_y"];
                 file.Close(); //파일 닫기
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("에러 메시지 : "+ex.Message+"\n 없는 설정파일입니다. 다시 선택해주세요.");
+                MessageBox.Show("에러 메시지 : " + ex.Message + "\n 없는 설정파일입니다. 다시 선택해주세요.");
             }
-            
-            
-        }
 
-        //기준점 갯수 확인
-        int ell_num = 0;
-        private void Point_Canvas_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e) //그림 클릭시
-        {
-            if (manu.IsChecked == true){ //수동일때
-                var position = e.GetPosition(Point_Canvas); //현제위치 가져오기
-
-                if (ell_num < 3) { // 3개 이하이면
-                    //Console.WriteLine("x:" + position.X + " y:" + position.Y); //원 좌표 확인
-                    ell_num++; // 기준점 갯수 증가
-                    if (ell_num == 1) {
-                        Mark_Point_1_x.Text = Convert.ToInt32(position.Y / 2).ToString(); //x좌표
-                        Mark_Point_1_y.Text = Convert.ToInt32(position.X / 2).ToString(); //y좌표
-                    }else if (ell_num == 2) {
-                        Mark_Point_2_x.Text = Convert.ToInt32(position.Y / 2).ToString();
-                        Mark_Point_2_y.Text = Convert.ToInt32(position.X / 2).ToString();
-                    }else if (ell_num == 3) {
-                        Mark_Point_3_x.Text = Convert.ToInt32(position.Y / 2).ToString();
-                        Mark_Point_3_y.Text = Convert.ToInt32(position.X / 2).ToString();
-                    }
-                }else {
-                    ell_num = 1;
-                    Mark_Point_1_x.Text = Convert.ToInt32(position.Y / 2).ToString(); //x좌표
-                    Mark_Point_1_y.Text = Convert.ToInt32(position.X / 2).ToString(); //y좌표
-                }
-
-                Mark_Point_TextChanged();
-            }
 
         }
 
@@ -757,7 +747,8 @@ namespace LaserBendingMeasurementSystem.Page
             foreach (char character in textBox.Text.ToCharArray()) //텍스트박스 문자 1개씩 검사
             {
                 //숫자검사 (숫자이거나 '.'이 없을때 '.'이 나오면)
-                if (char.IsDigit(character) || (character == '.' && count == 0)) {
+                if (char.IsDigit(character) || (character == '.' && count == 0))
+                {
                     result += character; //result에 추가
                     if (character == '.')//'.'이면 
                     {
@@ -767,12 +758,19 @@ namespace LaserBendingMeasurementSystem.Page
             }
             textBox.Text = result;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
-            if (Recipe_Width.Text == ""){
+            if (Recipe_Width.Text == "")
+            {
                 Recipe_Width.Text = "0";
-            }else {
-                Point_Canvas.Height = Convert.ToDouble(Recipe_Width.Text) * 2;
             }
-            if (auto.IsChecked == true) { //자동선택되어 있을때
+            else
+            {
+                if (Point_Canvas!=null)
+                {
+                    Point_Canvas.Width = Convert.ToDouble(Recipe_Width.Text) * 2;
+                }
+            }
+            if (auto.IsChecked == true)
+            { //자동선택되어 있을때
                 auto_Checked(auto, null);
             }
         }
@@ -785,22 +783,30 @@ namespace LaserBendingMeasurementSystem.Page
             int count = 0;
             foreach (char character in textBox.Text.ToCharArray())
             {
-                if (char.IsDigit(character) || (character == '.' && count == 0)) {
+                if (char.IsDigit(character) || (character == '.' && count == 0))
+                {
                     result += character;
-                    if (character == '.')  
+                    if (character == '.')
                     {
-                        count += 1; 
+                        count += 1;
                     }
                 }
             }
             textBox.Text = result;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
-            if (Recipe_Height.Text == ""){
+            if (Recipe_Height.Text == "")
+            {
                 Recipe_Height.Text = "0";
-            }else {
-                Point_Canvas.Width = Convert.ToDouble(Recipe_Height.Text) * 2;
             }
-            if (auto.IsChecked == true) { //자동선택되어 있을때
+            else
+            {
+                if (Point_Canvas != null)
+                {
+                    Point_Canvas.Height = Convert.ToDouble(Recipe_Height.Text) * 2;
+                }
+            }
+            if (auto.IsChecked == true)
+            { //자동선택되어 있을때
                 auto_Checked(auto, null);
             }
         }
@@ -816,24 +822,29 @@ namespace LaserBendingMeasurementSystem.Page
         }
         private void auto_Checked(object sender, RoutedEventArgs e) //기준점 자동 선택되었을때
         {
-            try{
-                if (Point_Canvas == null)
+            try
+            {
+                if (Recipe_Width.Text == "") { Recipe_Width.Text = "0"; }
+                if (Recipe_Height.Text == "") { Recipe_Height.Text = "0"; }
+                double x = Convert.ToDouble(Recipe_Width.Text) * 2;
+                double y = Convert.ToDouble(Recipe_Height.Text) * 2;
+                if (Mark_Point_1_x == null)
                 {
                     return;
                 }
-                Point_Canvas.Children.Clear();// 기준점 초기화
-                if (Recipe_Width.Text == "")  {   Recipe_Width.Text = "0";  }
-                if (Recipe_Height.Text == "") {   Recipe_Height.Text = "0"; }
-                double x = Convert.ToDouble(Recipe_Height.Text) * 2;
-                double y = Convert.ToDouble(Recipe_Width.Text) * 2;
                 Mark_Point_1_x.Text = "0";
                 Mark_Point_1_y.Text = "0";
-                Mark_Point_2_x.Text = (y / 2 - 3).ToString();
+                Mark_Point_2_x.Text = (x / 2 - 5).ToString();
                 Mark_Point_2_y.Text = "0";
-                Mark_Point_3_x.Text = (y / 4 - 3).ToString();
-                Mark_Point_3_y.Text = (x / 2 - 3).ToString();
-                Mark_Point_TextChanged();
-                ell_num = 3; //갯수
+                Mark_Point_3_x.Text = (x / 4 - 5).ToString();
+                Mark_Point_3_y.Text = (y / 2 - 5).ToString();
+
+                Canvas.SetLeft(im, 0);
+                Canvas.SetTop(im, 0);
+                Canvas.SetLeft(im2, (x - 10));
+                Canvas.SetTop(im2, 0);
+                Canvas.SetLeft(im3, (x / 2 - 10));
+                Canvas.SetTop(im3, (y - 10));
                 Mark_Point_1_x.IsEnabled = false;
                 Mark_Point_1_y.IsEnabled = false;
                 Mark_Point_2_x.IsEnabled = false;
@@ -841,53 +852,59 @@ namespace LaserBendingMeasurementSystem.Page
                 Mark_Point_3_x.IsEnabled = false;
                 Mark_Point_3_y.IsEnabled = false;
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Console.WriteLine("에러 메시지 : " + ex.Message);
             }
         }
 
-        public void Mark_Point_TextChanged()
+        private void auto2_Checked(object sender, RoutedEventArgs e) //측정점 자동 선택되었을때
         {
             try
             {
-                if (Point_Canvas == null)
+                if (Recipe_Width.Text == "") { Recipe_Width.Text = "0"; }
+                if (Recipe_Height.Text == "") { Recipe_Height.Text = "0"; }
+                double x = Convert.ToDouble(Recipe_Width.Text) * 2;
+                double y = Convert.ToDouble(Recipe_Height.Text) * 2;
+                if (Point_1_x == null)
                 {
                     return;
                 }
-                if (Mark_Point_1_x.Text == "") { Mark_Point_1_x.Text = "0"; }
-                if (Mark_Point_1_y.Text == "") { Mark_Point_1_y.Text = "0"; }
-                if (Mark_Point_2_x.Text == "") { Mark_Point_2_x.Text = "0"; }
-                if (Mark_Point_2_y.Text == "") { Mark_Point_2_y.Text = "0"; }
-                if (Mark_Point_3_x.Text == "") { Mark_Point_3_x.Text = "0"; }
-                if (Mark_Point_3_y.Text == "") { Mark_Point_3_y.Text = "0"; }
-                Point_Canvas.Children.Clear();// 기준점 초기화
-                Ellipse ellipse = new Ellipse(); //원 생성 1
-                ellipse.Width = 5;
-                ellipse.Height = 5;
-                ellipse.Fill = new SolidColorBrush(Color.FromRgb(100, 0, 0)); //빨간색
-                Canvas.SetLeft(ellipse, Convert.ToDouble(Mark_Point_1_y.Text) * 2);
-                Canvas.SetTop(ellipse, Convert.ToDouble(Mark_Point_1_x.Text) * 2);
-                Point_Canvas.Children.Add(ellipse); //원 보이게 하기
-                Ellipse ellipse2 = new Ellipse(); //원 생성 2
-                ellipse2.Width = 5;
-                ellipse2.Height = 5;
-                ellipse2.Fill = new SolidColorBrush(Color.FromRgb(100, 0, 0)); 
-                Canvas.SetLeft(ellipse2, Convert.ToDouble(Mark_Point_2_y.Text) * 2);
-                Canvas.SetTop(ellipse2, Convert.ToDouble(Mark_Point_2_x.Text) * 2);
-                Point_Canvas.Children.Add(ellipse2); //원 보이게 하기
-                Ellipse ellipse3 = new Ellipse(); //원 생성 3
-                ellipse3.Width = 5;
-                ellipse3.Height = 5;
-                ellipse3.Fill = new SolidColorBrush(Color.FromRgb(100, 0, 0)); 
-                Canvas.SetLeft(ellipse3, Convert.ToDouble(Mark_Point_3_y.Text) * 2);
-                Canvas.SetTop(ellipse3, Convert.ToDouble(Mark_Point_3_x.Text) * 2);
-                Point_Canvas.Children.Add(ellipse3); //원 보이게 하기
-            }catch (Exception ex){
+                Point_1_x.Text = "0";
+                Point_1_y.Text = "0";
+                Point_2_x.Text = (x / 4).ToString();
+                Point_2_y.Text = "0";
+                Point_3_x.Text = (x / 2).ToString();
+                Point_3_y.Text = "0";
+                Point_4_x.Text = "0";
+                Point_4_y.Text = (y / 4).ToString();
+                Point_5_x.Text = (x / 4).ToString();
+                Point_5_y.Text = (y / 4).ToString();
+                Point_6_x.Text = (x / 2).ToString();
+                Point_6_y.Text = (y / 4).ToString();
+                Point_7_x.Text = "0";
+                Point_7_y.Text = (y / 2).ToString();
+                Point_8_x.Text = (x / 4).ToString();
+                Point_8_y.Text = (y / 2).ToString();
+                Point_9_x.Text = (x / 2).ToString();
+                Point_9_y.Text = (y / 2).ToString();
+
+                Canvas.SetLeft(im4, 0);
+                Canvas.SetTop(im4, 0);
+                Canvas.SetLeft(im5, 0);
+                Canvas.SetTop(im5, (y / 2));
+                Canvas.SetLeft(im6, 0);
+                Canvas.SetTop(im6, (y));
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine("에러 메시지 : " + ex.Message);
             }
         }
 
-        private void Mark_Point_1_x_TextChanged(object sender, TextChangedEventArgs e)
+
+
+        private void Mark_Point_1_x_TextChanged(object sender, TextChangedEventArgs e) //측정점1 텍스트 변경되었을때
         {
             TextBox textBox = sender as TextBox;
             int selectionStart = textBox.SelectionStart;
@@ -895,7 +912,8 @@ namespace LaserBendingMeasurementSystem.Page
             int count = 0;
             foreach (char character in textBox.Text.ToCharArray())
             {
-                if (char.IsDigit(character) || (character == '.' && count == 0)) {
+                if (char.IsDigit(character) || (character == '.' && count == 0))
+                {
                     result += character;
                     if (character == '.')
                     {
@@ -905,7 +923,10 @@ namespace LaserBendingMeasurementSystem.Page
             }
             textBox.Text = result;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
-            Mark_Point_TextChanged();
+            if (result != "")
+            {
+                Canvas.SetLeft(im, Convert.ToDouble(result) * 2);
+            }
         }
 
         private void Mark_Point_1_y_TextChanged(object sender, TextChangedEventArgs e)
@@ -916,7 +937,8 @@ namespace LaserBendingMeasurementSystem.Page
             int count = 0;
             foreach (char character in textBox.Text.ToCharArray())
             {
-                if (char.IsDigit(character) || (character == '.' && count == 0)) {
+                if (char.IsDigit(character) || (character == '.' && count == 0))
+                {
                     result += character;
                     if (character == '.')
                     {
@@ -926,7 +948,10 @@ namespace LaserBendingMeasurementSystem.Page
             }
             textBox.Text = result;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
-            Mark_Point_TextChanged();
+            if (result != "")
+            {
+                Canvas.SetTop(im, Convert.ToDouble(result) * 2);
+            }
         }
         private void Mark_Point_2_x_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -936,7 +961,8 @@ namespace LaserBendingMeasurementSystem.Page
             int count = 0;
             foreach (char character in textBox.Text.ToCharArray())
             {
-                if (char.IsDigit(character) || (character == '.' && count == 0)) {
+                if (char.IsDigit(character) || (character == '.' && count == 0))
+                {
                     result += character;
                     if (character == '.')
                     {
@@ -946,7 +972,10 @@ namespace LaserBendingMeasurementSystem.Page
             }
             textBox.Text = result;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
-            Mark_Point_TextChanged();
+            if (result != "")
+            {
+                Canvas.SetLeft(im2, Convert.ToDouble(result) * 2);
+            }
         }
 
         private void Mark_Point_2_y_TextChanged(object sender, TextChangedEventArgs e)
@@ -957,7 +986,8 @@ namespace LaserBendingMeasurementSystem.Page
             int count = 0;
             foreach (char character in textBox.Text.ToCharArray())
             {
-                if (char.IsDigit(character) || (character == '.' && count == 0)) {
+                if (char.IsDigit(character) || (character == '.' && count == 0))
+                {
                     result += character;
                     if (character == '.')
                     {
@@ -967,7 +997,10 @@ namespace LaserBendingMeasurementSystem.Page
             }
             textBox.Text = result;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
-            Mark_Point_TextChanged();
+            if (result != "")
+            {
+                Canvas.SetTop(im2, Convert.ToDouble(result) * 2);
+            }
         }
         private void Mark_Point_3_x_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -977,7 +1010,8 @@ namespace LaserBendingMeasurementSystem.Page
             int count = 0;
             foreach (char character in textBox.Text.ToCharArray())
             {
-                if (char.IsDigit(character) || (character == '.' && count == 0)) {
+                if (char.IsDigit(character) || (character == '.' && count == 0))
+                {
                     result += character;
                     if (character == '.')
                     {
@@ -987,7 +1021,10 @@ namespace LaserBendingMeasurementSystem.Page
             }
             textBox.Text = result;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
-            Mark_Point_TextChanged();
+            if (result != "")
+            {
+                Canvas.SetLeft(im3, Convert.ToDouble(result) * 2);
+            }
         }
 
         private void Mark_Point_3_y_TextChanged(object sender, TextChangedEventArgs e)
@@ -998,9 +1035,10 @@ namespace LaserBendingMeasurementSystem.Page
             int count = 0;
             foreach (char character in textBox.Text.ToCharArray())
             {
-                if (char.IsDigit(character) || (character == '.' && count == 0)) {
+                if (char.IsDigit(character) || (character == '.' && count == 0))
+                {
                     result += character;
-                    if (character == '.') 
+                    if (character == '.')
                     {
                         count += 1;
                     }
@@ -1008,9 +1046,131 @@ namespace LaserBendingMeasurementSystem.Page
             }
             textBox.Text = result;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
-            Mark_Point_TextChanged();
+            if (result != "")
+            {
+                Canvas.SetTop(im3, Convert.ToDouble(result) * 2);
+            }
         }
 
+
+
+        private Image draggedImage;
+        private Point mousePosition;
+        private void Point_Canvas_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e) //그림 클릭시
+        {
+
+            string name = "";
+            var position = e.GetPosition(Point_Canvas); //현제위치 가져오기
+            //이미지
+            var image = e.Source as Image;
+            if (image != null && image.Source.ToString() != null)
+            {
+                name = image.Source.ToString().Substring(32, 6);
+            }
+            if (manu.IsChecked == true && (name == "point1" || name == "point2" || name == "point3")) //수동일때 기준점
+            {
+                if (image != null && Point_Canvas.CaptureMouse())
+                {
+                    Console.WriteLine("image: " + image.Source);
+                    mousePosition = e.GetPosition(Point_Canvas);
+                    draggedImage = image;
+                    Panel.SetZIndex(draggedImage, 1);
+                }
+            }
+            else if (manu2.IsChecked == true && (name == "bar_p1" || name == "bar_p2" || name == "bar_p3")) //수동일때 측정점
+            {
+                if (image != null && Point_Canvas.CaptureMouse())
+                {
+                    Console.WriteLine("image: " + image.Source);
+                    mousePosition = e.GetPosition(Point_Canvas);
+                    draggedImage = image;
+                    Panel.SetZIndex(draggedImage, 1);
+                }
+            }
+
+
+        }
+        private void Point_Canvas_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e) //그림 놓았을때
+        {
+            if (draggedImage != null)
+            {
+                Point_Canvas.ReleaseMouseCapture();
+                Panel.SetZIndex(draggedImage, 0);
+                draggedImage = null;
+            }
+        }
+
+        private void Point_Canvas_MouseMove(object sender, System.Windows.Input.MouseEventArgs e) //그림 움직이고 있을때
+        {
+            if (draggedImage != null)
+            {
+                var position = e.GetPosition(Point_Canvas);
+                var offset = position - mousePosition;
+                mousePosition = position;
+                Canvas.SetLeft(draggedImage, Canvas.GetLeft(draggedImage) + offset.X);
+                Canvas.SetTop(draggedImage, Canvas.GetTop(draggedImage) + offset.Y);
+                Console.WriteLine("x: " + position.X + "  Y:" + position.Y);
+                string name = draggedImage.Source.ToString().Substring(32, 6);
+                Console.WriteLine("name: " + name);
+                if (name == "point1")
+                {
+                    Mark_Point_1_x.Text = (position.X / 2).ToString();
+                    Mark_Point_1_y.Text = (position.Y / 2).ToString();
+
+                }
+                else if (name == "point2")
+                {
+                    Mark_Point_2_x.Text = (position.X / 2).ToString();
+                    Mark_Point_2_y.Text = (position.Y / 2).ToString();
+
+                }
+                else if (name == "point3")
+                {
+                    Mark_Point_3_x.Text = (position.X / 2).ToString();
+                    Mark_Point_3_y.Text = (position.Y / 2).ToString();
+
+                }
+                else if (name == "bar_p1")
+                {
+                    if (Recipe_Width.Text == "") { Recipe_Width.Text = "0"; }
+                    double x = Convert.ToDouble(Recipe_Width.Text); //가로길이
+                    Point_1_x.Text = "0";
+                    Point_2_x.Text = (x / 2).ToString();
+                    Point_3_x.Text = (x).ToString();
+                    Point_1_y.Text = (position.Y / 2).ToString();
+                    Point_2_y.Text = (position.Y / 2).ToString();
+                    Point_3_y.Text = (position.Y / 2).ToString();
+                    Canvas.SetLeft(im4, 0);
+
+                }
+                else if (name == "bar_p2")
+                {
+                    if (Recipe_Width.Text == "") { Recipe_Width.Text = "0"; }
+                    double x = Convert.ToDouble(Recipe_Width.Text); //가로길이
+                    Point_4_x.Text = "0";
+                    Point_5_x.Text = (x / 2).ToString();
+                    Point_6_x.Text = (x).ToString();
+                    Point_4_y.Text = (position.Y / 2).ToString();
+                    Point_5_y.Text = (position.Y / 2).ToString();
+                    Point_6_y.Text = (position.Y / 2).ToString();
+                    Canvas.SetLeft(im5, 0);
+
+                }
+                else if (name == "bar_p3")
+                {
+                    if (Recipe_Width.Text == "") { Recipe_Width.Text = "0"; }
+                    double x = Convert.ToDouble(Recipe_Width.Text); //가로길이
+                    Point_7_x.Text = "0";
+                    Point_8_x.Text = (x / 2).ToString();
+                    Point_9_x.Text = (x).ToString();
+                    Point_7_y.Text = (position.Y / 2).ToString();
+                    Point_8_y.Text = (position.Y / 2).ToString();
+                    Point_9_y.Text = (position.Y / 2).ToString();
+                    Canvas.SetLeft(im6, 0);
+
+                }
+            }
+        }
         #endregion 
     }
 }

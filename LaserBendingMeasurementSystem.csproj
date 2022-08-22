@@ -135,6 +135,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\System.Drawing.Design.dll" />
+    <Resource Include="Resource\bar_p1.png" />
+    <Resource Include="Resource\bar_p2.png" />
+    <Resource Include="Resource\bar_p3.png" />
+    <Resource Include="Resource\point1.png" />
+    <Resource Include="Resource\point2.png" />
+    <Resource Include="Resource\point3.png" />
     <Resource Include="Resource\test.png" />
     <Resource Include="Resource\baground_xy.png" />
     <Resource Include="Resource\phone.png" />
