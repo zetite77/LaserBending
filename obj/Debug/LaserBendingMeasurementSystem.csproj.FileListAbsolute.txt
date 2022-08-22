@@ -46,3 +46,28 @@ C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프�
 C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserBending\obj\Debug\LaserBendingMeasurementSystem.csproj.CoreCompileInputs.cache
 C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserBending\obj\Debug\LaserBendingMeasurementSystem.exe
 C:\Users\변상현\OneDrive - (주)노바소프트\바탕 화면\doc\청년프로젝트\LaserBending\obj\Debug\LaserBendingMeasurementSystem.pdb
+C:\Users\Choi\Source\Repos\LaserBending\bin\Debug\LaserBendingMeasurementSystem.exe.config
+C:\Users\Choi\Source\Repos\LaserBending\bin\Debug\LaserBendingMeasurementSystem.exe
+C:\Users\Choi\Source\Repos\LaserBending\bin\Debug\LaserBendingMeasurementSystem.pdb
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem.csproj.AssemblyReference.cache
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\Page\2Settings.baml
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\MainWindow.g.cs
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\Page\1Home.g.cs
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\Page\2Settings.g.cs
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\Page\3HistoryInfo.g.cs
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\Page\4Manual.g.cs
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\App.g.cs
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem_Content.g.cs
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem_MarkupCompile.cache
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem_MarkupCompile.lref
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\MainWindow.baml
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\Page\1Home.baml
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\Page\3HistoryInfo.baml
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\Page\4Manual.baml
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem.g.resources
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem.Properties.Resources.resources
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem.csproj.GenerateResource.cache
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem.exe
+C:\Users\Choi\Source\Repos\LaserBending\obj\Debug\LaserBendingMeasurementSystem.pdb

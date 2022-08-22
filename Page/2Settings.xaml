@@ -130,6 +130,27 @@
             <Setter Property="FontSize" Value="18" />
             <Setter Property="FontFamily" Value="LG Smart UI Regular" />
         </Style>
+
+        <Style x:Key="TextBoxContents3" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Width" Value="240"/>
+            <Setter Property="Height" Value="33.4" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Control.Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
+        <Style x:Key="TextBoxContents4" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#11FFFFFF" />
+            <Setter Property="Width" Value="205"/>
+            <Setter Property="Height" Value="33.4" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Control.Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="LG Smart UI Regular" />
+        </Style>
         <Style x:Key="ButtonContents" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#11FFFFFF" />
             <Setter Property="Height" Value="33.4" />
@@ -428,7 +449,7 @@
 
             <TabItem Header="레시피" IsSelected="True" Height="50">
                 <Grid Background="#FF264457" Margin="-3,-3,-3,-3">
-                    <ScrollViewer  Width="800" Height="450" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30,30,0,30" MaxWidth="800" Grid.Column="2" Grid.Row="20" ScrollViewer.CanContentScroll="True">
+                    <ScrollViewer  Width="500" Height="450" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30,30,0,30" MaxWidth="800" Grid.Column="2" Grid.Row="20" ScrollViewer.CanContentScroll="True">
                         <ScrollViewer.Background>
                             <LinearGradientBrush EndPoint="1,1" StartPoint="0.5,0">
                                 <GradientStop Color="#33000000"/>
@@ -437,11 +458,13 @@
                         </ScrollViewer.Background>
 
                         <DockPanel LastChildFill="False">
-                            <StackPanel Width="790" Margin="0,0,0,0">
+                            <StackPanel Width="490" Margin="0,0,0,0">
+                                <StackPanel Width="480" Margin="12,10,0,0">
+                                    <TextBox x:Name="Recipe_Name" Style="{StaticResource Title_T}" Text="기기명" TextWrapping="Wrap"/>
+                                </StackPanel>
                                 <DockPanel LastChildFill="False">
-                                    <StackPanel Width="280" Margin="30,10,0,10">
+                                    <StackPanel Width="150" Margin="15,3,0,10">
                                         <!--레시피 스펙 설정-->
-                                        <TextBox x:Name="Recipe_Name" Style="{StaticResource Title_T}" Text="기기명1" TextWrapping="Wrap"/>
                                         <TextBlock Style="{StaticResource Index}" Text="크기 가로" TextWrapping="Wrap"/>
                                         <TextBlock Style="{StaticResource Index}" Text="크기 세로" TextWrapping="Wrap"/>
                                         <TextBlock Style="{StaticResource Index}" Text="두께" TextWrapping="Wrap"/>
@@ -449,18 +472,30 @@
                                         <TextBlock Style="{StaticResource Index}" Text="설정할 편차 범위" TextWrapping="Wrap"/>
                                     </StackPanel>
 
-                                    <StackPanel Width="450" Margin="0,10,10,10" DockPanel.Dock="Left">
-                                        <TextBlock Style="{StaticResource Title}" Text="" TextWrapping="Wrap"/>
-                                        <TextBox x:Name="Recipe_Width" Text="" Style="{StaticResource TextBoxContents}" TextChanged="Recipe_Width_TextChanged"/>
-                                        <TextBox x:Name="Recipe_Height" Text="" Style="{StaticResource TextBoxContents}" TextChanged="Recipe_Height_TextChanged"/>
-                                        <TextBox x:Name="Recipe_Weight" Style="{StaticResource TextBoxContents}"/>
+                                    <StackPanel Width="300" Margin="0,3,10,10" DockPanel.Dock="Left">
+                                        <StackPanel  Orientation="Horizontal">
+                                            <TextBox x:Name="Recipe_Width" Text="" Style="{StaticResource TextBoxContents3}" TextChanged="Recipe_Width_TextChanged"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="mm" TextWrapping="Wrap"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <TextBox x:Name="Recipe_Height" Text="" Style="{StaticResource TextBoxContents3}" TextChanged="Recipe_Height_TextChanged"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="mm" TextWrapping="Wrap"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <TextBox x:Name="Recipe_Weight" Style="{StaticResource TextBoxContents3}"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="mm" TextWrapping="Wrap"/>
+                                        </StackPanel>
                                         <TextBlock Text="200μm = 0.2mm = 0.02cm" Style="{StaticResource Index2}"/>
-                                        <TextBox x:Name="Recipe_Range" Style="{StaticResource TextBoxContents}"/>
+                                        <StackPanel  Orientation="Horizontal">
+                                            <TextBlock Style="{StaticResource Index2}" Text="±" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Recipe_Range" Style="{StaticResource TextBoxContents4}"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="mm" TextWrapping="Wrap"/>
+                                        </StackPanel>
                                     </StackPanel>
 
                                 </DockPanel>
                                 <DockPanel LastChildFill="False">
-                                    <StackPanel Width="150" Margin="30,10,0,10">
+                                    <StackPanel Width="150" Margin="15,10,0,10">
                                         <!--레시피 수동/자동 설정-->
                                         <TextBlock Style="{StaticResource Index}" Text="기준점 입력 선택" TextWrapping="Wrap"/>
                                         <TextBlock Style="{StaticResource Index}" Text="기준점1" TextWrapping="Wrap"/>
@@ -485,107 +520,122 @@
                                             <RadioButton GroupName="auto_manu" x:Name="auto" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left" IsChecked="True" Checked="auto_Checked">자동</RadioButton>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
                                             <TextBox x:Name="Mark_Point_1_x" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_1_x_TextChanged" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
                                             <TextBox x:Name="Mark_Point_1_y" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_1_y_TextChanged" IsEnabled="False" />
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
                                             <TextBox x:Name="Mark_Point_2_x" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_2_x_TextChanged" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
                                             <TextBox x:Name="Mark_Point_2_y" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_2_y_TextChanged" IsEnabled="False"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
                                             <TextBox x:Name="Mark_Point_3_x" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_3_x_TextChanged" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
                                             <TextBox x:Name="Mark_Point_3_y" Style="{StaticResource TextBoxContents2}" TextChanged="Mark_Point_3_y_TextChanged" IsEnabled="False"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
                                             <RadioButton GroupName="auto_manu2" x:Name="manu2" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left">수동</RadioButton>
-                                            <RadioButton GroupName="auto_manu2" x:Name="auto2" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left" IsChecked="True">자동</RadioButton>
+                                            <RadioButton GroupName="auto_manu2" x:Name="auto2" Style="{StaticResource RadioButtonContents}" DockPanel.Dock="Left" IsChecked="True" Checked="auto2_Checked">자동</RadioButton>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
-                                            <TextBox x:Name="Point_1_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
-                                            <TextBox x:Name="Point_1_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_1_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_1_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
-                                            <TextBox x:Name="Point_2_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
-                                            <TextBox x:Name="Point_2_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_2_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_2_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
-                                            <TextBox x:Name="Point_3_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
-                                            <TextBox x:Name="Point_3_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_3_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_3_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
-                                            <TextBox x:Name="Point_4_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
-                                            <TextBox x:Name="Point_4_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_4_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_4_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
-                                            <TextBox x:Name="Point_5_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
-                                            <TextBox x:Name="Point_5_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_5_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_5_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
-                                            <TextBox x:Name="Point_6_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
-                                            <TextBox x:Name="Point_6_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_6_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_6_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
-                                            <TextBox x:Name="Point_7_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
-                                            <TextBox x:Name="Point_7_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_7_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_7_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
-                                            <TextBox x:Name="Point_8_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
-                                            <TextBox x:Name="Point_8_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_8_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_8_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <Label Content="X : "/>
-                                            <TextBox x:Name="Point_9_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
-                                            <Label Content=" Y : "/>
-                                            <TextBox x:Name="Point_9_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="X :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_9_x" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
+                                            <TextBlock Style="{StaticResource Index2}" Text="Y :" TextWrapping="Wrap"/>
+                                            <TextBox x:Name="Point_9_y" Style="{StaticResource TextBoxContents2}" IsEnabled="False" Text="-"/>
                                         </StackPanel>
                                     </StackPanel>
-                                    <Grid Width="290" >
-                                        <Grid.Background>
-                                            <ImageBrush Stretch="Fill"  ImageSource="/LaserBendingMeasurementSystem;component/Resource/baground_xy.png" AlignmentY="Top" AlignmentX="Left"/>
-                                        </Grid.Background>
-                                        <!-- 그림 -->
-                                        <Canvas x:Name="Point_Canvas" Width="180" Height="80" Margin="5,30,0,0" MouseLeftButtonDown="Point_Canvas_MouseLeftButtonDown">
-                                            <Canvas.Background>
-                                                <ImageBrush ImageSource="/LaserBendingMeasurementSystem;component/Resource/phone.png"/>
-                                            </Canvas.Background>
-                                            <Canvas.LayoutTransform>
-                                                <ScaleTransform ScaleX="1" ScaleY="1" CenterX=".5" CenterY=".5"/>
-                                            </Canvas.LayoutTransform>
-                                        </Canvas>
-                                    </Grid>
+
 
                                 </DockPanel>
 
                             </StackPanel>
+
+
                         </DockPanel>
 
-
                     </ScrollViewer>
+
+
                     <Button x:Name="LecipeSettingsBtn_Reset" Content="초기화" HorizontalAlignment="Left" Margin="856,374,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="LecipeSettingsBtn_Reset_Click"/>
                     <Button x:Name="LecipeSettingsBtn_Delete" Content="삭제" HorizontalAlignment="Left" Margin="856,444,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="LecipeSettingsBtn_Delete_Click"/>
                     <Button x:Name="LecipeSettingsBtn_Save" Content="저장" HorizontalAlignment="Left" Margin="856,515,0,0" VerticalAlignment="Top" Height="50" Width="150" Click="LecipeSettingsBtn_Save_Click" />
+
+
+                    <DockPanel HorizontalAlignment="Left"  Height="445" LastChildFill="False" Margin="540,120,0,0" VerticalAlignment="Top" Width="300">
+                        <DockPanel.Background>
+                            <LinearGradientBrush  EndPoint="1,1" StartPoint="0.5,0">
+                                <GradientStop Color="#33000000"/>
+                                <GradientStop Color="#333E8853" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DockPanel.Background>
+                        <Grid  Height="445" Width="300">
+                            <Grid.Background>
+                                <ImageBrush Stretch="Fill"  ImageSource="/Resource/baground_xy.png" AlignmentY="Top" AlignmentX="Left"/>
+                            </Grid.Background>
+                            <!-- 그림 -->
+                            <Canvas x:Name="Point_Canvas" Width="140" Height="160"  Margin="20,0,0,30" MouseLeftButtonDown="Point_Canvas_MouseLeftButtonDown" MouseLeftButtonUp="Point_Canvas_MouseLeftButtonUp" MouseMove="Point_Canvas_MouseMove" >
+                                <Canvas.Background>
+                                    <ImageBrush ImageSource="/Resource/phone.png"/>
+                                </Canvas.Background>
+                                <Canvas.LayoutTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="-1" CenterX=".5" CenterY=".5"/>
+                                </Canvas.LayoutTransform>
+
+                            </Canvas>
+                        </Grid>
+                    </DockPanel>
 
                 </Grid>
             </TabItem>

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Shapes;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace LaserBendingMeasurementSystem.Page
 {
@@ -73,6 +74,7 @@ namespace LaserBendingMeasurementSystem.Page
         private LJX8IF_TARGET_SETTING targetSetting;
 
         #endregion
+        Image im, im2, im3, im4, im5, im6;
 
         #region Constructor
         public MenuSettings(MainWindow parent)
@@ -92,6 +94,36 @@ namespace LaserBendingMeasurementSystem.Page
             targetSetting.byTarget2 =
             targetSetting.byTarget3 =
             targetSetting.byTarget4 = 0x00;
+
+            ComboBox1.Items.Clear(); //레시피 콤보박스  전부 없애기
+            DirectoryInfo di = new DirectoryInfo("Setting"); //세팅 폴더
+            //폴더가 존재하지 않으면
+            if (di.Exists == false) { di.Create(); }
+            foreach (FileInfo item in di.GetFiles()) //세팅 폴더 안의 모든 파일 가져오기
+            {
+                ComboBox1.Items.Add(item.Name.Substring(0, item.Name.Length - 4)); //레시피 콤보박스에 파일 이름들 추가
+
+            }
+            var bm = new BitmapImage(new Uri(@"/Resource/point1.png", UriKind.RelativeOrAbsolute));
+            var bm2 = new BitmapImage(new Uri(@"/Resource/point2.png", UriKind.RelativeOrAbsolute));
+            var bm3 = new BitmapImage(new Uri(@"/Resource/point3.png", UriKind.RelativeOrAbsolute));
+            var bm4 = new BitmapImage(new Uri(@"/Resource/bar_p1.png", UriKind.RelativeOrAbsolute));
+            var bm5 = new BitmapImage(new Uri(@"/Resource/bar_p2.png", UriKind.RelativeOrAbsolute));
+            var bm6 = new BitmapImage(new Uri(@"/Resource/bar_p3.png", UriKind.RelativeOrAbsolute));
+            im = new Image { Source = bm }; im2 = new Image { Source = bm2 }; im3 = new Image { Source = bm3 };
+            im4 = new Image { Source = bm4 }; im5 = new Image { Source = bm5 }; im6 = new Image { Source = bm6 };
+            im.Width = 20; im2.Width = 20; im3.Width = 20;
+            im4.Width = 200; im5.Width = 200; im6.Width = 200;
+            im.Height = 20; im2.Height = 20; im3.Height = 20;
+            im4.Height = 5; im5.Height = 5; im6.Height = 5;
+            im.Opacity = 0.5; im2.Opacity = 0.5; im3.Opacity = 0.5;
+            im4.Opacity = 0.5; im5.Opacity = 0.5; im6.Opacity = 0.5;
+            Canvas.SetLeft(im, 0); Canvas.SetLeft(im2, 50); Canvas.SetLeft(im3, 20);
+            Canvas.SetLeft(im4, 10); Canvas.SetLeft(im5, 10); Canvas.SetLeft(im6, 10);
+            Canvas.SetTop(im, 0); Canvas.SetTop(im2, 0); Canvas.SetTop(im3, 100);
+            Canvas.SetTop(im4, 10); Canvas.SetTop(im5, 30); Canvas.SetTop(im6, 70);
+            Point_Canvas.Children.Add(im); Point_Canvas.Children.Add(im2); Point_Canvas.Children.Add(im3);
+            Point_Canvas.Children.Add(im4); Point_Canvas.Children.Add(im5); Point_Canvas.Children.Add(im6);
         }
         #endregion
 
