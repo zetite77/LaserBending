@@ -164,6 +164,9 @@
                         <DockPanel LastChildFill="False">
                             <StackPanel Width="220" Margin="0,0,0,0">
                                 <TextBlock Style="{StaticResource Title}" Text="파일위치" TextWrapping="Wrap"/>
+                                <TreeView Name="folder_csv">
+                                    <TreeViewItem Header="가동이력" ItemsSource="{Binding Source={StaticResource ObjectDataProviderKey},Path=SubFolerCollection}"/>
+                                </TreeView>
                             </StackPanel>
                         </DockPanel>
                     </ScrollViewer>
