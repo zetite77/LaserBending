@@ -134,6 +134,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
     <Content Include="DLL\System.Drawing.Design.dll" />
     <Resource Include="Resource\bar_p1.png" />
     <Resource Include="Resource\bar_p2.png" />
