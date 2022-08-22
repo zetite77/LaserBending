@@ -119,7 +119,7 @@ namespace LaserBendingMeasurementSystem.Page
             im.Opacity = 0.5; im2.Opacity = 0.5; im3.Opacity = 0.5;
             im4.Opacity = 0.5; im5.Opacity = 0.5; im6.Opacity = 0.5;
             Canvas.SetLeft(im, 0); Canvas.SetLeft(im2, 50); Canvas.SetLeft(im3, 20);
-            Canvas.SetLeft(im4, 10); Canvas.SetLeft(im5, 10); Canvas.SetLeft(im6, 10);
+            Canvas.SetLeft(im4, 0); Canvas.SetLeft(im5, 0); Canvas.SetLeft(im6, 0);
             Canvas.SetTop(im, 0); Canvas.SetTop(im2, 0); Canvas.SetTop(im3, 100);
             Canvas.SetTop(im4, 10); Canvas.SetTop(im5, 30); Canvas.SetTop(im6, 70);
             Point_Canvas.Children.Add(im); Point_Canvas.Children.Add(im2); Point_Canvas.Children.Add(im3);
